@@ -8,13 +8,19 @@ let newGame: Game;
 
 document.getElementById('start-cta')!.addEventListener('click', ()=>{
     const player:Player = new Player();
-    player.name = Util.getValue('playerName');
 
+    player.name = Util.getValue('playerName');
     const probleCount: number = Number (Util.getValue('problemCount'));
     const factor: number = Number (Util.getValue('factor'));
-
-    newGame = new Game(player, probleCount, factor);
-    newGame.displayGame();
+    let elem: HTMLElement = <HTMLElement>document.getElementById('error');
+    if(player.name && probleCount && factor){
+        newGame = new Game(player, probleCount, factor);
+        newGame.displayGame();
+        Util.setStyleAttribute(elem, {'display':'none'});
+    }else{        
+        Util.setStyleAttribute(elem, {'display':'block'});
+    }
+    
 });
 
 //add Click Handler to a calculate Score Button
