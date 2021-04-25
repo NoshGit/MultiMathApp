@@ -62,3 +62,14 @@ ul,ol{
     cursor: pointer;
     border-radius: 5px;
 }
+
+.secondary-cta{
+    background-color: #0a90e9;
+    padding: 10px 15px;
+    border: none;
+    font: 500 14px Avenir,Avenir W02,Arial,Helvetica,sans-serif;
+    color: #fff;
+    max-width: 200px;
+    cursor: pointer;
+    border-radius: 5px;
+}
