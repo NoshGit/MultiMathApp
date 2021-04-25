@@ -1,4 +1,4 @@
-import { Result } from './result';
+import { Result } from './Interfaces/result';
 
 export class ScoreBoard {
     private results: Result[] = [];
@@ -12,9 +12,10 @@ export class ScoreBoard {
 
         for(let i = 0; i < this.results.length; i++){
             const result : Result = this.results[i];
-            output += '<h4>';
-            output += result.playerName + ':' + result.score + '/' + result.problemCount + 'for Factore' + result.factor;
-            output += '</h4>';
+            //output += '<h4>';
+            //output += ' Player Name: '+ result.playerName + '</br> Correct Score:  ' + result.score + '/' + result.problemCount + '  for Factore  ' + result.factor;
+            //output += '</h4>';
+            output += `<h4><p>Player Name: ${result.playerName}</p><p>Score: ${result.score} / ${result.problemCount} For Factor ${result.factor}`
         }
 
         const scoreElement: HTMLElement = document.getElementById('scores')!;

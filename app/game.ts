@@ -1,7 +1,7 @@
 import { getValue } from './utility';
-import { Result } from './result';
+import { Result } from './Interfaces/result';
 import { Player } from './player';
-import { ScoreBoard as ResultPanel } from './scoreBoard';
+import { ScoreBoard as ResultPanel } from './scoreboard';
 
 export class Game {
     private scoreBoard: ResultPanel = new ResultPanel();
@@ -15,7 +15,7 @@ export class Game {
         for (let i =1; i <= this.problemCount; i++){
             gameForm += `<div class="form-group">`;
             gameForm += `<label for="answer${i}" class="col-sm-2 control-label">`;
-            gameForm += String(this.factor) +`x ${i} = </label>`;
+            gameForm += String(this.factor) + ` x ${i} = </label>`;
             gameForm += `<div class="col-sm-1"><input type="text" class="form-control" id="answer${i}" </div>`;
             gameForm += '</div>';
 
